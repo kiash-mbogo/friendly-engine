@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h2 style="font-family: serif; color: darkred; align-self: center;">UNA CARTA PARA MI AMOR</h2>
+        <div class="container"></div>
+        <div class="heart"></div>
+        <style>
+            .container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 10vmin;
+            }
+            .heart{
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: relative;
+                transform: rotate(45deg);
+                animation: infinite;
+            }
+            .heart::before,
+            .heart::after{
+                content:"";
+                width: 100px;
+                height: 100px;
+                background: red;
+                border-radius: 50%;
+                position: absolute;
+            }
+            .heart::before{
+                top: -50px;
+                left: 0;
+            }
+            .heart::after{
+                left: -50px;
+                top: 0;
+            }
+            @keyframes pulse {
+                0%{
+                    transform: rotate(45deg)scale(1);
+                }
+                50%{
+                    transform: rotate(45deg) scale(1.2);
+                }
+                100%{transform: rotate(45deg) scale(1);
+                }
+            }
+        </style><br>
+        <style>
+            #img1{
+                clip-path: circle(60%);
+            }
+        </style>
+        <title>Mon Amore</title>
+    </head>
+    <style>
+        p.one{
+            border-style: inset outset;
+            border-color: red;
+        }
+    </style>
+    <body style="background-color:pink;">
+        <!--css-->
+        <style>
+            .circle-frame{
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 60%;
+                border: 5px solid lavender;
+            }
+        </style>
+        <img class="circle-frame" img id="img1" src="c:\Users\HP\Pictures\IMG-20260206-WA0005.jpg"  >
+        <p style="font-family: serif;color: darkred;font-size: large;">I WAS LOOKING FOR AFFECTION BUT GOT PERFECTION</p>
+        <audio id="player" controls autoplay muted style="color: brown;">
+            <source src="c:\Users\HP\Downloads\NYASHINSKI - HELLO LYRICS VIDEO [BJBIgFr_sGQ].mp3" type="audio/mpeg">
+            <source src="c:\Users\HP\Downloads\NYASHINSKI - HELLO LYRICS VIDEO [BJBIgFr_sGQ].mp3" type="audo/mpeg">
+        </audio>
+        
+        <div class="envelope" id="env">
+  <div class="flap"></div>
+  <div class="letter">
+                   <p class="one" style="font-family: 'Times New Roman';font-style: italic; color: gold;">
+            Days become months<br>Months become years<br>But my love keeps growing more stronger<br>
+            Like a magnet I'm always attracted to you<br> Never imagined i will live to celebrate love<br>
+            But you are making it possible<br> Months earlier it seemed impossible<br> To have such a beautiful girl like you<br>
+            But i guess my charm worked it's way through to you<br> Every memory i hold it like a souvenir in mind and heart<br>
+            Being with you is a different kind of joy<br> So beautiful,jovial and uniquein every way<br>
+            That's why i want to celebrate you and us<br> The love we share is worth all celebrations<br>
+            You deserve to be treated good, good loving and affection<br>
+            And that's why i come with one question<br><strong>Will you be my valentines?</strong><br>
+        </p>
+        </div>
+        </div><script>
+document.getElementById("env").addEventListener("click", () => {
+  document.getElementById("env").classList.toggle("open");
+});
+</script>
+<style>
+    .envelope {
+  width: 300px;
+  height: 200px;
+  background: #d64e3b;
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow:scroll ;
+  margin: 40px;
+}
+
+/* Top flap */
+.flap {
+  width: 100%;
+  height: 100%;
+  background: #b73d2e;
+  clip-path: polygon(0 0, 100% 0, 50% 60%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top;
+  transition: 0.5s ease;
+  z-index: 2;
+}
+
+/* Hidden letter */
+.letter {
+  width: 90%;
+  height: 90%;
+  background: white;
+  position: absolute;
+  left: 5%;
+  bottom: -100%;  /* START COMPLETELY HIDDEN */
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.6s ease;
+  z-index: 1;
+}
+
+/* When envelope is open */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+  bottom: 100%;  /* SLIDES UP AND REVEALS */
+}
+
+</style>
+<div class="question">
+  <p style="font-family: serif; color: darkred;font-size: large;">What is your decision?</p>
+  <button id="yesBtn">Yes</button>
+  <button id="noBtn">No</button>
+</div>
+
+<!-- Hidden content -->
+<div id="yesContent" class="hidden">
+  <p style="font-family: serif; color: darkred;">🎉 You clicked Yes! You have won a reservation in my heart.</p>
+</div>
+
+<div id="noContent" class="hidden">
+  <p style="font-family: serif; color: black;">😢 You clicked No! I'm Broken.</p>
+</div>
+<style>
+    button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  background-color:brown;
+  color:beige;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color:gold;
+}
+
+.hidden {
+  display: none;
+  margin-top: 15px;
+  padding: 10px;
+  background: #f2f2f2;
+  border-radius: 6px;
+}
+
+</style>
+<script>
+    const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const yesContent = document.getElementById("yesContent");
+const noContent = document.getElementById("noContent");
+
+// When Yes is clicked
+yesBtn.addEventListener("click", () => {
+  yesContent.classList.remove("hidden");
+  noContent.classList.add("hidden"); // hide the No content
+});
+
+// When No is clicked
+noBtn.addEventListener("click", () => {
+  noContent.classList.remove("hidden");
+  yesContent.classList.add("hidden"); // hide the Yes content
+});
+
+</script>
+<h2 style="font-family: serif;color: darkred;">FUN PICS</h2>
+<div class="album">
+<div class="photo"><img src="c:\Users\HP\Pictures\IMG-20260209-WA0009.jpg" alt="Photo 1"></div>
+  <div class="photo"><img src="c:\Users\HP\Pictures\IMG-20260209-WA0012.jpg" alt="Photo 2"></div>
+  <div class="photo"><img src="c:\Users\HP\Pictures\IMG-20260209-WA0011.jpg" alt="Photo 3"></div>
+</div>
+<style>
+.album {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.photo img:hover {
+  transform: scale(1.05); /* zoom effect */
+}
+</style>
+
+    </body>
+</html>
